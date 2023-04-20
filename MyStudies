@@ -1,0 +1,121 @@
+*/ Testes de casos em kotlin */
+
+fun main() {                                               // casos do when 
+cases("hello")
+cases(1)
+cases(6)
+
+}
+
+fun cases(obj:Any){
+    when (obj){
+       1 -> println("one")                                 //1
+       is String -> println("is a string")                 //2
+       !is String -> println("Not is  string")             //3
+    }
+}
+
+class MyClass 
+
+fun main(){                                                // laços com for
+  
+    val cakes = listOf("carrot", "strawberry", "corn")
+
+    for (cake in cakes) {
+        println("yummy, it's a $cake cake!")
+    }
+
+} 
+
+fun eatACake() = println("Eat a Cake")                    // impressão da ação
+fun bakeACake() = println("Bake a Cake")
+
+fun main() {
+    
+    var cakesEaten = 1
+    var cakesBaked = 0
+    
+    while ( cakesEaten < 3){                              // condição 1
+        eatACake()
+        cakesEaten ++
+        bakeACake()
+        cakesBaked ++
+    }
+    
+    do {eatACake()                                        // condição 2 dependente de 1
+    cakesEaten ++
+} while (cakesBaked > cakesEaten) 
+}
+
+fun main(){                                               // exemplos de loops com Int
+    
+    for(i in 0..5){                                       // 1
+    print(i)
+    }
+    
+    println(" ")
+    
+    for(i in 0 until 5){                                 // 2
+    print(i)
+    }
+    
+    println(" ")
+    
+    for(i in 0..10 step 2){                              // 3
+        print(i)
+    }
+    
+    println(" ")
+    
+    for(i in 3 downTo 0){                                // 4
+        print(i)
+    }
+} 
+
+
+fun main(){                                              // ifs e loops com Char
+    
+    val x = 2
+    if (x in 1..5) {                                     // 1
+        println("yes 1-5")
+    }
+    
+    println()
+    
+    if (x !in 6..10){                                   // 2
+        print("not 6-10")
+    }
+    
+}
+
+
+
+fun main(){                                             // verificação de igualdade
+    
+    val authors = setOf("CoraCora", "Theoly", "stephen")
+    val writers = setOf("Theoly", "CoraCora", "stephen")
+    
+    println(authors == writers)                         // analise estrutural
+    println(authors === writers)                        // analise referencial
+
+}
+
+
+fun main(){                                            // expressão condicional
+    
+    fun max(a: Int, b: Int) = if (a > b) a else b      // 1. exp resumida
+    
+    fun maxold(a: Int, b: Int): Int {                  //2.  exp. completa
+    
+    if(a>b){
+        return a }
+    
+    else { 
+        return b }
+    }
+    
+    println(max(99, -42))
+    println(maxold(89, -42))
+}
+
+
